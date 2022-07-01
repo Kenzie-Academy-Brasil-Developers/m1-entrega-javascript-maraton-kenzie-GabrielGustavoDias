@@ -1,14 +1,15 @@
-const competidores = ["Rafael", " Manoel"," Daniel"]
+const participantes = ["Rafael", " Daniel","Manoel "]
 
 function position(competidores){
     let daniel = competidores.indexOf(" Daniel")
-    if(daniel == 0){
-      competidores.copyWithin(0,daniel,daniel -1)
-      return `Daniel é o vencedor.  ${competidores.concat(" este é o podio")}`
-    }else{
+
+    if(daniel == 0  ){
+      return "Daniel é o vencedor."
+    }else{     
+      competidores.splice(daniel - 1,0,competidores[daniel])      
+      competidores.splice(daniel +1,1)
       return `${competidores[0]} é o vencedor.  ${competidores.concat(" este é o podio")}`     
     }
   }
   
-
-console.log(position(competidores))
+console.log(position(participantes))
